@@ -202,7 +202,7 @@ function configurarScrollReveal(){
 
 function registrarServiceWorker(){
   if('serviceWorker' in navigator){
-    window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js').catch(()=>{}));
+    window.addEventListener('load', () => navigator.serviceWorker.register('/service-worker.js').catch(()=>{}));
   }
 }
 
@@ -218,3 +218,6 @@ document.addEventListener('DOMContentLoaded', () => {
   configurarScrollReveal();
   registrarServiceWorker();
 });
+/ /   A c t u a l i z a c i o n   m a i n   A u r o r a  
+ / /   A c t u a l i z a c i o n   f i n a l   m a i n   A u r o r a  
+ 
