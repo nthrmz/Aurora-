@@ -1,5 +1,3 @@
 User-agent: *
 Allow: /
-Disallow: /admin/
-Disallow: /private/
-Sitemap: /sitemap.xml
+Sitemap: https://nthrmz.github.io/Aurora-/sitemap.xml

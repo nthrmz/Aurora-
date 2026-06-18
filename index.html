@@ -1,10 +1,10 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="es" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Landing page de Aurora, tarotista intuitiva con lecturas, agenda de eventos, foro de comentarios y carrito de reservas.">
-  <meta name="keywords" content="tarot, aurora, lecturas, agenda mÃ­stica, carrito, comunidad astral">
+  <meta name="keywords" content="tarot, aurora, lecturas, agenda mística, carrito, comunidad astral">
   <meta name="author" content="Aurora Tarot">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#050A1F">
@@ -17,51 +17,43 @@
   <link rel="manifest" href="manifest.json">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/estilos.css">
+  <link rel="stylesheet" href="assets/css/estilos.css?v=101">
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
-  <nav class="navbar navbar-expand-lg fixed-top" aria-label="NavegaciÃ³n principal">
+  <nav class="navbar navbar-expand-lg fixed-top" aria-label="Navegación principal">
     <div class="container">
-      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html" aria-label="Ir al inicio de Aurora">
+      <a class="navbar-brand" href="index.html" aria-label="Ir al inicio de Aurora">
         <img class="logo-mark" src="assets/img/logo-aurora.svg" alt="Logo de Aurora Tarot" width="42" height="42">
         <span>Aurora</span>
       </a>
-      <div class="d-flex align-items-center gap-2 order-lg-2">
-        <a class="btn btn-outline-aurora position-relative" href="carrito.html" aria-label="Abrir carrito de compras">
-          <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
-          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill badge-cart cart-count">0</span>
-        </a>
-
-        <button id="themeToggle" class="theme-switch is-dark" type="button" role="switch" aria-checked="false" aria-label="Cambiar modo claro u oscuro">
-          <span class="theme-switch-track">
-            <span class="theme-switch-icon theme-sun"><i class="fa-solid fa-sun" aria-hidden="true"></i></span>
-            <span class="theme-switch-icon theme-moon"><i class="fa-solid fa-moon" aria-hidden="true"></i></span>
-            <span class="theme-switch-thumb"></span>
-          </span>
-        </button>
-        <button class="navbar-toggler btn-outline-aurora" type="button" data-bs-toggle="collapse" data-bs-target="#navbarAurora" aria-controls="navbarAurora" aria-expanded="false" aria-label="Abrir menÃº">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
-      <div class="collapse navbar-collapse" id="navbarAurora">
-        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
-          <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
-<li class="nav-item"><a class="nav-link" href="lecturas.html">Lecturas</a></li>
-<li class="nav-item"><a class="nav-link" href="foro.html">Comunidad</a></li>
-<li class="nav-item"><a class="nav-link" href="agenda.html">Agenda</a></li>
-<li class="nav-item"><a class="nav-link" href="sobre.html">Sobre mÃ­</a></li>
-<li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+      <a class="btn btn-outline-aurora position-relative" href="carrito.html" aria-label="Abrir carrito de compras">
+        🛒
+        <span class="position-absolute top-0 start-100 translate-middle badge-cart cart-count">0</span>
+      </a>
+      <button id="themeToggle" class="theme-switch" type="button" aria-label="Cambiar modo claro u oscuro">
+        <span class="theme-switch-track">
+          <span class="theme-switch-icon theme-sun">☀</span>
+          <span class="theme-switch-icon theme-moon">☾</span>
+          <span class="theme-switch-thumb"></span>
+        </span>
+      </button>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarAurora" aria-controls="navbarAurora" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse" id="navbarAurora">
+        <ul class="navbar-nav">
+          <li><a class="nav-link active" href="index.html">Inicio</a></li>
+<li><a class="nav-link" href="lecturas.html">Lecturas</a></li>
+<li><a class="nav-link" href="foro.html">Comunidad</a></li>
+<li><a class="nav-link" href="agenda.html">Agenda</a></li>
+<li><a class="nav-link" href="sobre.html">Sobre mí</a></li>
+<li><a class="nav-link" href="contacto.html">Contacto</a></li>
         </ul>
       </div>
     </div>
   </nav>
-
   <main id="contenido">
 <section id="heroAurora" class="carousel slide" data-bs-ride="carousel" aria-label="Carrusel principal de Aurora">
   <div class="carousel-indicators">
@@ -69,207 +61,66 @@
     <button type="button" data-bs-target="#heroAurora" data-bs-slide-to="1" aria-label="Diapositiva 2"></button>
     <button type="button" data-bs-target="#heroAurora" data-bs-slide-to="2" aria-label="Diapositiva 3"></button>
   </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <div class="hero-slide">
-        <div class="container">
-          <div class="row align-items-center g-5">
-            <div class="col-lg-6 hero-content" data-aos="fade-right">
-              <span class="kicker"><i class="fa-solid fa-sparkles"></i> Tarot y astrologÃ­a</span>
-              <h1 class="display-3 display-title mt-3">Aurora, lecturas intuitivas con una mirada <span class="text-gradient">clara y elegante</span></h1>
-              <p class="lead text-secondary-emphasis mt-3">Aurora es una tarotista y guÃ­a espiritual que acompaÃ±a procesos de amor, trabajo y crecimiento personal a travÃ©s del tarot, la intuiciÃ³n y la energÃ­a zodiacal.</p>
-              <div class="d-flex flex-wrap gap-3 mt-4">
-                <a href="lecturas.html" class="btn btn-aurora btn-lg">Reservar lectura</a>
-                <a href="agenda.html" class="btn btn-outline-aurora btn-lg">Ver prÃ³ximos eventos</a>
-              </div>
-              <div class="hero-signs mt-4">
-                <span><i class="fa-solid fa-star-and-crescent"></i> 12 signos</span>
-                <span><i class="fa-solid fa-moon"></i> Carta del dÃ­a</span>
-                <span><i class="fa-solid fa-calendar-days"></i> Agenda astral</span>
-              </div>
-            </div>
-            <div class="col-lg-6 hero-card-stack" aria-hidden="true">
-              <img class="floating-card card-a" src="assets/img/card-star.svg" alt="" width="200" height="320">
-              <img class="floating-card card-b" src="assets/img/card-moon.svg" alt="" width="200" height="320">
-              <img class="floating-card card-c" src="assets/img/card-sun.svg" alt="" width="200" height="320">
-            </div>
+  <div class="carousel-item active">
+    <div class="hero-slide">
+      <div class="container"><div class="row align-items-center g-5">
+        <div class="col-lg-6 hero-content" data-aos="fade-right">
+          <span class="kicker">Tarot y astrología</span>
+          <h1 class="display-3 display-title mt-3">Aurora, lecturas intuitivas con una mirada <span class="text-gradient">clara y elegante</span></h1>
+          <p class="lead text-secondary-emphasis mt-3">Aurora es una tarotista y guía espiritual que acompaña procesos de amor, trabajo y crecimiento personal a través del tarot, la intuición y la energía zodiacal.</p>
+          <div class="d-flex flex-wrap gap-3 mt-4">
+            <a href="lecturas.html" class="btn btn-aurora btn-lg">Reservar lectura</a>
+            <a href="agenda.html" class="btn btn-outline-aurora btn-lg">Ver próximos eventos</a>
           </div>
+          <div class="hero-signs mt-4"><span>☉ 12 signos</span><span>☾ Carta del día</span><span>✦ Agenda astral</span></div>
         </div>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <div class="hero-slide">
-        <div class="container">
-          <div class="row align-items-center g-5">
-            <div class="col-lg-5 order-lg-2" data-aos="zoom-in">
-              <div class="portrait-frame hero-portrait-card">
-                <picture><source srcset="assets/img/aurora.webp" type="image/webp"><img src="assets/img/aurora.jpg" alt="Imagen de Aurora leyendo cartas en su mesa de trabajo" width="900" height="1350" loading="lazy" decoding="async"></picture>
-              </div>
-            </div>
-            <div class="col-lg-7 hero-content" data-aos="fade-up">
-              <span class="kicker"><i class="fa-solid fa-user"></i> Conoce a Aurora</span>
-              <h2 class="display-3 display-title mt-3">Una tarotista cercana que convierte sÃ­mbolos en orientaciÃ³n</h2>
-              <p class="lead text-secondary-emphasis mt-3">En cada sesiÃ³n, Aurora crea un espacio sereno y respetuoso para ayudarte a ordenar emociones, comprender ciclos y recibir una guÃ­a simbÃ³lica con sensibilidad humana.</p>
-              <a href="sobre.html" class="btn btn-aurora btn-lg mt-3">Descubrir su historia</a>
-            </div>
-          </div>
+        <div class="col-lg-6 hero-card-stack" aria-hidden="true">
+          <img class="floating-card card-a" src="assets/img/card-star.svg" alt="" width="200" height="320">
+          <img class="floating-card card-b" src="assets/img/card-moon.svg" alt="" width="200" height="320">
+          <img class="floating-card card-c" src="assets/img/card-sun.svg" alt="" width="200" height="320">
         </div>
-      </div>
+      </div></div>
     </div>
-    <div class="carousel-item">
-      <div class="hero-slide">
-        <div class="container">
-          <div class="row align-items-center g-5">
-            <div class="col-lg-6 hero-content" data-aos="fade-right">
-              <span class="kicker"><i class="fa-solid fa-calendar-days"></i> Agenda de eventos</span>
-              <h2 class="display-3 display-title mt-3">Ferias, encuentros y lecturas gratuitas</h2>
-              <p class="lead text-secondary-emphasis mt-3">Consulta el calendario de Aurora para seguir sus participaciones en ferias esotÃ©ricas, encuentros especiales y espacios gratuitos para nuevos clientes.</p>
-              <a href="agenda.html" class="btn btn-aurora btn-lg mt-3">Explorar agenda</a>
-            </div>
-            <div class="col-lg-6" data-aos="zoom-in">
-              <div class="glass-card p-4 p-lg-5">
-                <h3 class="section-title">PrÃ³xima apariciÃ³n</h3>
-                <p class="text-info fw-bold mb-1">15 de julio Â· 16:00</p>
-                <p class="mb-0">Lecturas gratuitas en la Feria MÃ­stica del Prado Â· Cupos limitados.</p>
-              </div>
-            </div>
-          </div>
+  </div>
+  <div class="carousel-item">
+    <div class="hero-slide">
+      <div class="container"><div class="row align-items-center g-5">
+        <div class="col-lg-5 order-lg-2" data-aos="zoom-in">
+          <div class="portrait-frame"><picture><source srcset="assets/img/aurora.webp" type="image/webp"><img src="assets/img/aurora.jpg" alt="Aurora leyendo cartas en su mesa de trabajo" width="900" height="1350" decoding="async"></picture></div>
         </div>
-      </div>
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#heroAurora" data-bs-slide="prev" aria-label="Anterior"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
-  <button class="carousel-control-next" type="button" data-bs-target="#heroAurora" data-bs-slide="next" aria-label="Siguiente"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
-</section>
-
-<section class="py-5">
-  <div class="container">
-    <div class="row align-items-center g-4">
-      <div class="col-lg-5" data-aos="fade-up">
-        <span class="kicker"><i class="fa-solid fa-gem"></i> Sobre la experiencia Aurora</span>
-        <h2 class="section-title display-6 mt-3">Tarot, astrologÃ­a y acompaÃ±amiento con una propuesta de valor real</h2>
-      </div>
-      <div class="col-lg-7" data-aos="fade-up" data-aos-delay="120">
-        <p class="lead text-secondary-emphasis">Aurora combina lecturas personalizadas, seguimiento de eventos, carrito de reservas y una comunidad de comentarios en una web moderna, responsiva y pensada para clientes que buscan una guÃ­a espiritual seria, estÃ©tica y accesible.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="py-4 cta-strip" data-aos="fade-up">
-  <div class="container">
-    <div class="glass-card p-4 p-lg-5">
-      <div class="row align-items-center g-4">
-        <div class="col-lg-8">
-          <span class="kicker"><i class="fa-solid fa-bolt"></i> Llamada a la acciÃ³n</span>
-          <h2 class="section-title h1 mt-3 mb-2">Â¿Quieres una guÃ­a para tu momento actual?</h2>
-          <p class="text-secondary-emphasis mb-0">Elige una lectura, revisa tu signo o consulta la agenda de Aurora para encontrar el espacio ideal para conectar con tus preguntas.</p>
+        <div class="col-lg-7 hero-content" data-aos="fade-up">
+          <span class="kicker">Conoce a Aurora</span>
+          <h2 class="display-3 display-title mt-3">Una tarotista cercana que convierte símbolos en orientación</h2>
+          <p class="lead text-secondary-emphasis mt-3">En cada sesión, Aurora crea un espacio sereno y respetuoso para ayudarte a ordenar emociones y recibir una guía simbólica con sensibilidad humana.</p>
+          <a href="sobre.html" class="btn btn-aurora btn-lg mt-3">Descubrir su historia</a>
         </div>
-        <div class="col-lg-4 text-lg-end">
-          <a href="lecturas.html" class="btn btn-aurora btn-lg mb-2 w-100">Reservar ahora</a>
-          <a href="contacto.html" class="btn btn-outline-aurora btn-lg w-100">Hacer una consulta</a>
+      </div></div>
+    </div>
+  </div>
+  <div class="carousel-item">
+    <div class="hero-slide">
+      <div class="container"><div class="row align-items-center g-5">
+        <div class="col-lg-6 hero-content" data-aos="fade-right">
+          <span class="kicker">Agenda de eventos</span>
+          <h2 class="display-3 display-title mt-3">Ferias, encuentros y lecturas gratuitas</h2>
+          <p class="lead text-secondary-emphasis mt-3">Consulta el calendario de Aurora para seguir sus participaciones en ferias esotéricas, encuentros especiales y espacios gratuitos.</p>
+          <a href="agenda.html" class="btn btn-aurora btn-lg mt-3">Explorar agenda</a>
         </div>
-      </div>
+        <div class="col-lg-6" data-aos="zoom-in"><div class="glass-card p-5"><h3 class="section-title">Próxima aparición</h3><p class="text-info fw-bold mb-1">15 de julio · 16:00</p><p class="mb-0">Lecturas gratuitas en la Feria Mística del Prado · Cupos limitados.</p></div></div>
+      </div></div>
     </div>
   </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#heroAurora" data-bs-slide="prev" aria-label="Anterior"><span class="carousel-control-prev-icon"></span></button>
+  <button class="carousel-control-next" type="button" data-bs-target="#heroAurora" data-bs-slide="next" aria-label="Siguiente"><span class="carousel-control-next-icon"></span></button>
 </section>
-
-<section class="py-5">
-  <div class="container">
-    <div class="row g-5 align-items-center">
-      <div class="col-lg-5" data-aos="fade-right">
-        <div class="portrait-frame">
-          <picture><source srcset="assets/img/aurora.webp" type="image/webp"><img src="assets/img/aurora.jpg" alt="Aurora en una lectura de tarot con cartas sobre la mesa" width="900" height="1350" loading="lazy" decoding="async"></picture>
-        </div>
-      </div>
-      <div class="col-lg-7" data-aos="fade-left">
-        <span class="kicker"><i class="fa-solid fa-hand-sparkles"></i> La tarotista</span>
-        <h2 class="section-title display-6 mt-3">Aurora trabaja con intuiciÃ³n, escucha y sÃ­mbolos</h2>
-        <p class="text-secondary-emphasis lead">Aurora atiende consultas enfocadas en amor, decisiones, trabajo y bienestar emocional. Su propuesta no busca imponer respuestas, sino abrir conversaciones honestas para ayudarte a mirar tu situaciÃ³n con mÃ¡s claridad.</p>
-        <div class="row g-3 mt-2">
-          <div class="col-md-4"><div class="glass-card p-3 h-100 mini-feature"><strong>Lecturas Ã©ticas</strong><span>Enfoque empÃ¡tico y respetuoso.</span></div></div>
-          <div class="col-md-4"><div class="glass-card p-3 h-100 mini-feature"><strong>EstÃ©tica cuidada</strong><span>Ambiente visual elegante y coherente.</span></div></div>
-          <div class="col-md-4"><div class="glass-card p-3 h-100 mini-feature"><strong>AtenciÃ³n cercana</strong><span>Sesiones online y presenciales.</span></div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="py-5">
-  <div class="container">
-    <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4">
-      <div>
-        <span class="kicker"><i class="fa-solid fa-clone"></i> Servicios</span>
-        <h2 class="section-title display-6 mt-3 mb-0">Lecturas destacadas</h2>
-      </div>
-      <a href="lecturas.html" class="btn btn-outline-aurora">Ver todo</a>
-    </div>
-    <div id="featuredServices" class="row g-4"></div>
-  </div>
-</section>
-
-<section class="py-5 zodiac-section">
-  <div class="container">
-    <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4">
-      <div>
-        <span class="kicker"><i class="fa-solid fa-star-and-crescent"></i> Signos zodiacales</span>
-        <h2 class="section-title display-6 mt-3 mb-0">El universo tambiÃ©n habla a travÃ©s de tu signo</h2>
-      </div>
-      <p class="text-secondary-emphasis mb-0">Explora la energÃ­a general de cada signo dentro de la experiencia Aurora.</p>
-    </div>
-    <div id="zodiacGrid" class="row g-3"></div>
-  </div>
-</section>
-
-<section class="py-5">
-  <div class="container">
-    <div class="row g-4 align-items-center">
-      <div class="col-lg-5" data-aos="flip-left">
-        <button id="oracleButton" class="oracle-card glass-card p-4 border-0 w-100 text-start" type="button" aria-label="Revelar carta del dÃ­a">
-          <img src="assets/img/card-moon.svg" alt="Carta del tarot La Luna" width="200" height="320" loading="lazy" decoding="async">
-          <span class="btn btn-aurora w-100 mt-3">Revelar carta del dÃ­a</span>
-        </button>
-      </div>
-      <div class="col-lg-7" data-aos="fade-left">
-        <div class="glass-card p-4 p-lg-5 oracle-result" id="oracleResult">
-          <span class="kicker"><i class="fa-solid fa-wand-magic-sparkles"></i> Mini orÃ¡culo</span>
-          <h2 class="section-title display-6 mt-3">Haz clic en la carta y recibe un mensaje</h2>
-          <p class="text-secondary-emphasis mb-0">Una interacciÃ³n pensada para reforzar la identidad astrolÃ³gica y el tono ceremonial de la pÃ¡gina.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="py-5">
-  <div class="container">
-    <div class="row g-4">
-      <div class="col-md-4" data-aos="fade-up"><div class="glass-card p-4 h-100"><i class="fa-solid fa-cart-shopping text-info fs-2 mb-3"></i><h3 class="h4">Carrito</h3><p class="text-secondary-emphasis">Reserva lecturas, modifica cantidades y revisa totales de forma sencilla.</p></div></div>
-      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100"><div class="glass-card p-4 h-100"><i class="fa-solid fa-comments text-info fs-2 mb-3"></i><h3 class="h4">Comunidad</h3><p class="text-secondary-emphasis">Clientes y visitantes pueden compartir experiencias y comentarios sobre las lecturas.</p></div></div>
-      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200"><div class="glass-card p-4 h-100"><i class="fa-solid fa-calendar-check text-info fs-2 mb-3"></i><h3 class="h4">Agenda</h3><p class="text-secondary-emphasis">Un calendario visual para revisar eventos, apariciones y actividades gratuitas de Aurora.</p></div></div>
-    </div>
-  </div>
-</section>
-
-
-<section class="py-5 final-cta">
-  <div class="container" data-aos="zoom-in">
-    <div class="glass-card p-4 p-lg-5 text-center">
-      <span class="kicker"><i class="fa-solid fa-calendar-check"></i> Reserva con Aurora</span>
-      <h2 class="section-title display-6 mt-3">Tu lectura puede empezar hoy</h2>
-      <p class="lead text-secondary-emphasis mx-auto" style="max-width:760px;">Explora los servicios, agrega tu lectura al carrito o revisa cuÃ¡ndo Aurora estarÃ¡ presente en ferias, lives y encuentros especiales.</p>
-      <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
-        <a href="lecturas.html" class="btn btn-aurora btn-lg">Ver lecturas</a>
-        <a href="agenda.html" class="btn btn-outline-aurora btn-lg">Ver agenda</a>
-        <a href="foro.html" class="btn btn-outline-aurora btn-lg">Leer comentarios</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-</main>
-
+<section class="py-5"><div class="container"><div class="row align-items-center g-4"><div class="col-lg-5" data-aos="fade-up"><span class="kicker">Sobre Aurora</span><h2 class="section-title display-6 mt-3">Tarot, astrología y acompañamiento con una propuesta real</h2></div><div class="col-lg-7" data-aos="fade-up"><p class="lead text-secondary-emphasis">Aurora combina lecturas personalizadas, agenda de eventos, carrito de reservas y una comunidad de comentarios en una web moderna, responsiva y pensada para clientes que buscan una guía espiritual seria y accesible.</p></div></div></div></section>
+<section class="py-4"><div class="container"><div class="glass-card p-5"><div class="row align-items-center g-4"><div class="col-lg-8"><span class="kicker">Llamada a la acción</span><h2 class="section-title h1 mt-3 mb-2">¿Quieres una guía para tu momento actual?</h2><p class="text-secondary-emphasis mb-0">Elige una lectura, revisa tu signo o consulta la agenda de Aurora.</p></div><div class="col-lg-4 text-lg-end"><a href="lecturas.html" class="btn btn-aurora btn-lg mb-2 w-100">Reservar ahora</a><a href="contacto.html" class="btn btn-outline-aurora btn-lg w-100">Hacer una consulta</a></div></div></div></div></section>
+<section class="py-5"><div class="container"><div class="row g-5 align-items-center"><div class="col-lg-5" data-aos="fade-right"><div class="portrait-frame"><picture><source srcset="assets/img/aurora.webp" type="image/webp"><img src="assets/img/aurora.jpg" alt="Aurora en una lectura de tarot con cartas" width="900" height="1350" loading="lazy" decoding="async"></picture></div></div><div class="col-lg-7" data-aos="fade-left"><span class="kicker">La tarotista</span><h2 class="section-title display-6 mt-3">Aurora trabaja con intuición, escucha y símbolos</h2><p class="text-secondary-emphasis lead">Aurora atiende consultas enfocadas en amor, decisiones, trabajo y bienestar emocional. Su propuesta abre conversaciones honestas para mirar cada situación con claridad.</p><div class="row g-3 mt-2"><div class="col-md-4"><div class="glass-card p-3 h-100 mini-feature"><strong>Lecturas éticas</strong><span>Enfoque empático.</span></div></div><div class="col-md-4"><div class="glass-card p-3 h-100 mini-feature"><strong>Estética cuidada</strong><span>Ambiente elegante.</span></div></div><div class="col-md-4"><div class="glass-card p-3 h-100 mini-feature"><strong>Atención cercana</strong><span>Online y presencial.</span></div></div></div></div></div></div></section>
+<section class="py-5"><div class="container"><div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4"><div><span class="kicker">Servicios</span><h2 class="section-title display-6 mt-3 mb-0">Lecturas destacadas</h2></div><a href="lecturas.html" class="btn btn-outline-aurora">Ver todo</a></div><div id="featuredServices" class="row g-4"></div></div></section>
+<section class="py-5"><div class="container"><div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4"><div><span class="kicker">Signos zodiacales</span><h2 class="section-title display-6 mt-3 mb-0">El universo también habla a través de tu signo</h2></div></div><div id="zodiacGrid" class="row g-3"></div></div></section>
+<section class="py-5"><div class="container"><div class="row g-4 align-items-center"><div class="col-lg-5"><button id="oracleButton" class="glass-card p-4 border-0 w-100" type="button" aria-label="Revelar carta del día"><img src="assets/img/card-moon.svg" alt="Carta del tarot La Luna" width="200" height="320" loading="lazy" decoding="async"><span class="btn btn-aurora w-100 mt-3">Revelar carta del día</span></button></div><div class="col-lg-7"><div class="glass-card p-5" id="oracleResult"><span class="kicker">Mini oráculo</span><h2 class="section-title display-6 mt-3">Haz clic en la carta y recibe un mensaje</h2><p class="text-secondary-emphasis mb-0">Una interacción pensada para reforzar la identidad astrológica de la página.</p></div></div></div></div></section>
+<section class="py-5"><div class="container"><div class="glass-card p-5 text-center"><span class="kicker">Reserva con Aurora</span><h2 class="section-title display-6 mt-3">Tu lectura puede empezar hoy</h2><p class="lead text-secondary-emphasis mx-auto" style="max-width:760px;">Explora los servicios, agrega tu lectura al carrito o revisa cuándo Aurora estará presente en eventos.</p><div class="d-flex flex-wrap justify-content-center gap-3 mt-4"><a href="lecturas.html" class="btn btn-aurora btn-lg">Ver lecturas</a><a href="agenda.html" class="btn btn-outline-aurora btn-lg">Ver agenda</a><a href="foro.html" class="btn btn-outline-aurora btn-lg">Leer comentarios</a></div></div></div></section>
+  </main>
   <footer class="footer py-5 mt-5">
     <div class="container">
       <div class="row g-4 align-items-center">
@@ -278,37 +129,30 @@
             <img class="logo-mark" src="assets/img/logo-aurora.svg" alt="Logo Aurora" width="42" height="42">
             <h2 class="section-title h4 mb-0">Aurora</h2>
           </div>
-          <p class="text-secondary-emphasis mb-0">Aurora Tarot ofrece lecturas intuitivas, eventos astrales y un espacio digital elegante para conectar con claridad, simbolismo y guÃ­a emocional.</p>
+          <p class="text-secondary-emphasis mb-0">Aurora Tarot ofrece lecturas intuitivas, eventos astrales y un espacio digital elegante para conectar con claridad, simbolismo y guía emocional.</p>
         </div>
         <div class="col-lg-4">
           <h3 class="h6 text-uppercase text-info">Redes sociales</h3>
           <div class="d-flex gap-2">
-            <a class="social-icon" href="https://facebook.com/auroratarot.oficial" target="_blank" rel="noopener" aria-label="Facebook de Aurora"><i class="fa-brands fa-facebook-f"></i></a>
-            <a class="social-icon" href="https://x.com/auroratarot" target="_blank" rel="noopener" aria-label="X de Aurora"><i class="fa-brands fa-x-twitter"></i></a>
-            <a class="social-icon" href="https://instagram.com/auroratarot.oficial" target="_blank" rel="noopener" aria-label="Instagram de Aurora"><i class="fa-brands fa-instagram"></i></a>
-            <a class="social-icon" href="https://tiktok.com/@auroratarot" target="_blank" rel="noopener" aria-label="TikTok de Aurora"><i class="fa-brands fa-tiktok"></i></a>
+            <a class="social-icon" href="https://facebook.com/auroratarot.oficial" target="_blank" rel="noopener" aria-label="Facebook de Aurora">f</a>
+            <a class="social-icon" href="https://x.com/auroratarot" target="_blank" rel="noopener" aria-label="X de Aurora">X</a>
+            <a class="social-icon" href="https://instagram.com/auroratarot.oficial" target="_blank" rel="noopener" aria-label="Instagram de Aurora">◎</a>
+            <a class="social-icon" href="https://tiktok.com/@auroratarot" target="_blank" rel="noopener" aria-label="TikTok de Aurora">♪</a>
           </div>
         </div>
         <div class="col-lg-3 text-lg-end">
-          <small class="text-secondary-emphasis">Â© <span id="year"></span> Aurora Tarot. Proyecto acadÃ©mico.</small>
+          <small class="text-secondary-emphasis">© <span id="year"></span> Aurora Tarot. Proyecto académico.</small>
         </div>
       </div>
     </div>
   </footer>
-
-  <div class="toast-container position-fixed bottom-0 end-0 p-3">
-    <div id="auroraToast" class="toast text-bg-dark border-0" role="status" aria-live="polite" aria-atomic="true">
-      <div class="d-flex">
-        <div class="toast-body">AcciÃ³n realizada.</div>
-        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Cerrar"></button>
-      </div>
+  <div class="toast-container">
+    <div id="auroraToast" class="toast" role="status" aria-live="polite" aria-atomic="true">
+      <span class="toast-body">Acción realizada.</span>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Cerrar"></button>
     </div>
   </div>
-
-  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script defer src="assets/js/main.js"></script>
-  <script defer src="assets/js/home.js"></script>
+  <script defer src="assets/js/main.js?v=101"></script>
+  <script defer src="assets/js/home.js?v=101"></script>
 </body>
-</html>< ! - -   A c t u a l i z a c i o n   i n d e x   A u r o r a   - - >  
- < ! - -   A c t u a l i z a c i o n   f i n a l   i n d e x   A u r o r a   - - >  
- 
+</html>

@@ -1,6 +1,7 @@
+
 const comentariosIniciales = [
-  { id: crypto.randomUUID(), nombre:'Valeria', categoria:'Experiencia', comentario:'La lectura de tres cartas me ayudó a ordenar mis ideas antes de tomar una decisión.', estado:'aprobado', fecha:'2026-06-01' },
-  { id: crypto.randomUUID(), nombre:'Mateo', categoria:'Pregunta', comentario:'¿Las lecturas de feria se reservan por horario?', estado:'aprobado', fecha:'2026-06-05' }
+  { id: 'c1', nombre:'Valeria', categoria:'Experiencia', comentario:'La lectura de tres cartas me ayudó a ordenar mis ideas antes de tomar una decisión.', estado:'aprobado', fecha:'2026-06-01' },
+  { id: 'c2', nombre:'Mateo', categoria:'Pregunta', comentario:'¿Las lecturas de feria se reservan por horario?', estado:'aprobado', fecha:'2026-06-05' }
 ];
 function obtenerComentarios(){
   const guardados = localStorage.getItem('auroraComentarios');
@@ -28,20 +29,11 @@ function renderizarComentarios(){
         <button class="btn btn-sm btn-outline-danger" data-delete="${c.id}">Eliminar</button>
       </div>
     </article>`).join('') : `<div class="glass-card p-4 text-center">No hay comentarios para este filtro.</div>`;
-
   document.querySelectorAll('[data-action]').forEach(btn => btn.addEventListener('click', () => cambiarEstado(btn.dataset.id, btn.dataset.action)));
   document.querySelectorAll('[data-delete]').forEach(btn => btn.addEventListener('click', () => eliminarComentario(btn.dataset.delete)));
 }
-function cambiarEstado(id, estado){
-  const data = obtenerComentarios().map(c => c.id === id ? { ...c, estado } : c);
-  guardarComentarios(data);
-  renderizarComentarios();
-}
-function eliminarComentario(id){
-  guardarComentarios(obtenerComentarios().filter(c => c.id !== id));
-  renderizarComentarios();
-}
-
+function cambiarEstado(id, estado){ guardarComentarios(obtenerComentarios().map(c => c.id === id ? { ...c, estado } : c)); renderizarComentarios(); }
+function eliminarComentario(id){ guardarComentarios(obtenerComentarios().filter(c => c.id !== id)); renderizarComentarios(); }
 document.addEventListener('DOMContentLoaded', () => {
   renderizarComentarios();
   document.getElementById('filterComments')?.addEventListener('change', renderizarComentarios);
@@ -53,17 +45,17 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
     const nuevo = {
-      id: crypto.randomUUID(),
+      id: 'c' + Date.now(),
       nombre: document.getElementById('commentName').value.trim(),
       categoria: document.getElementById('commentCategory').value,
       comentario: document.getElementById('commentText').value.trim(),
       estado: 'oculto',
-      fecha: new Date().toLocaleDateString('es-BO')
+      fecha: new Date().toISOString().slice(0,10)
     };
     guardarComentarios([nuevo, ...obtenerComentarios()]);
     form.reset();
     form.classList.remove('was-validated');
-    mostrarToast('Comentario enviado. Quedó pendiente de aprobación.');
     renderizarComentarios();
+    mostrarToast('Comentario enviado para moderación.');
   });
 });

@@ -1,145 +1,79 @@
-function obtenerCarritoAurora() {
-  return JSON.parse(localStorage.getItem("auroraCarrito")) || [];
-}
 
-function guardarCarritoAurora(carrito) {
-  localStorage.setItem("auroraCarrito", JSON.stringify(carrito));
-  actualizarContadorAurora();
-}
+function renderizarCarrito(){
+  const carrito = obtenerCarrito();
+  const contenedor = document.getElementById('cartContent');
+  const resumen = document.getElementById('cartSummary');
+  if(!contenedor || !resumen) return;
 
-function actualizarContadorAurora() {
-  const carrito = obtenerCarritoAurora();
-  const total = carrito.reduce((suma, item) => suma + item.cantidad, 0);
-  document.querySelectorAll(".cart-count").forEach((contador) => {
-    contador.textContent = total;
-  });
-}
-
-function renderizarCarritoAurora() {
-  const carrito = obtenerCarritoAurora();
-  const contenedor = document.getElementById("cartContent");
-  const resumen = document.getElementById("cartSummary");
-
-  if (!contenedor || !resumen) return;
-
-  if (carrito.length === 0) {
+  if(carrito.length === 0){
     contenedor.innerHTML = `
       <div class="glass-card p-5 text-center">
         <h2 class="section-title">Tu carrito está vacío</h2>
         <p class="text-secondary-emphasis">Agrega una lectura para iniciar tu reserva astral.</p>
         <a href="lecturas.html" class="btn btn-aurora">Ver lecturas</a>
-      </div>
-    `;
-    resumen.innerHTML = "";
+      </div>`;
+    resumen.innerHTML = '';
     return;
   }
 
   contenedor.innerHTML = `
     <div class="cart-table table-responsive">
-      <table class="table align-middle">
-        <thead>
-          <tr>
-            <th>Lectura</th>
-            <th>Precio</th>
-            <th>Cantidad</th>
-            <th>Subtotal</th>
-            <th>Acción</th>
-          </tr>
-        </thead>
+      <table class="table">
+        <thead><tr><th>Lectura</th><th>Precio</th><th>Cantidad</th><th>Subtotal</th><th>Acción</th></tr></thead>
         <tbody>
-          ${carrito.map((item) => `
+          ${carrito.map(item => `
             <tr>
-              <td>
-                <strong>${item.nombre}</strong><br>
-                <small class="text-secondary-emphasis">${item.descripcion}</small>
-              </td>
+              <td><strong>${item.nombre}</strong><br><small class="text-secondary-emphasis">${item.descripcion}</small></td>
               <td>Bs ${item.precio}</td>
-              <td>
-                <div class="d-flex align-items-center gap-2">
-                  <button class="qty-btn" data-id="${item.id}" data-accion="restar">-</button>
-                  <strong>${item.cantidad}</strong>
-                  <button class="qty-btn" data-id="${item.id}" data-accion="sumar">+</button>
-                </div>
-              </td>
+              <td><div class="d-flex align-items-center gap-2">
+                <button class="qty-btn" data-qty="-1" data-id="${item.id}" aria-label="Restar ${item.nombre}">-</button>
+                <strong>${item.cantidad}</strong>
+                <button class="qty-btn" data-qty="1" data-id="${item.id}" aria-label="Sumar ${item.nombre}">+</button>
+              </div></td>
               <td>Bs ${item.precio * item.cantidad}</td>
-              <td>
-                <button class="btn btn-sm btn-outline-danger" data-eliminar="${item.id}">
-                  Eliminar
-                </button>
-              </td>
-            </tr>
-          `).join("")}
+              <td><button class="btn btn-sm btn-outline-danger" data-remove="${item.id}">Eliminar</button></td>
+            </tr>`).join('')}
         </tbody>
       </table>
-    </div>
-  `;
+    </div>`;
 
-  const total = carrito.reduce((suma, item) => suma + item.precio * item.cantidad, 0);
-
+  const total = carrito.reduce((acc,item)=> acc + item.precio * item.cantidad, 0);
   resumen.innerHTML = `
     <aside class="glass-card p-4 sticky-top" style="top:110px">
       <h2 class="section-title h4">Resumen</h2>
+      <div class="d-flex justify-content-between border-bottom py-3"><span>Subtotal</span><strong>Bs ${total}</strong></div>
+      <div class="d-flex justify-content-between py-3 fs-4"><span>Total</span><strong class="text-info">Bs ${total}</strong></div>
+      <button class="btn btn-aurora w-100 mb-2" data-bs-toggle="modal" data-bs-target="#checkoutModal">Finalizar reserva</button>
+      <button class="btn btn-outline-aurora w-100" id="vaciarCarrito">Vaciar carrito</button>
+    </aside>`;
 
-      <div class="d-flex justify-content-between border-bottom border-secondary-subtle py-3">
-        <span>Subtotal</span>
-        <strong>Bs ${total}</strong>
-      </div>
-
-      <div class="d-flex justify-content-between py-3 fs-4">
-        <span>Total</span>
-        <strong class="text-info">Bs ${total}</strong>
-      </div>
-
-      <button class="btn btn-aurora w-100 mb-2" type="button">
-        Finalizar reserva
-      </button>
-
-      <button class="btn btn-outline-aurora w-100" id="vaciarCarrito" type="button">
-        Vaciar carrito
-      </button>
-    </aside>
-  `;
-
-  document.querySelectorAll("[data-accion]").forEach((boton) => {
-    boton.addEventListener("click", () => {
-      cambiarCantidadAurora(boton.dataset.id, boton.dataset.accion);
-    });
-  });
-
-  document.querySelectorAll("[data-eliminar]").forEach((boton) => {
-    boton.addEventListener("click", () => {
-      eliminarLecturaAurora(boton.dataset.eliminar);
-    });
-  });
-
-  document.getElementById("vaciarCarrito")?.addEventListener("click", () => {
-    guardarCarritoAurora([]);
-    renderizarCarritoAurora();
-  });
+  document.querySelectorAll('[data-qty]').forEach(btn => btn.addEventListener('click', () => cambiarCantidad(btn.dataset.id, Number(btn.dataset.qty))));
+  document.querySelectorAll('[data-remove]').forEach(btn => btn.addEventListener('click', () => eliminarItem(btn.dataset.remove)));
+  document.getElementById('vaciarCarrito')?.addEventListener('click', () => { guardarCarrito([]); renderizarCarrito(); });
+  configurarModal();
 }
-
-function cambiarCantidadAurora(id, accion) {
-  let carrito = obtenerCarritoAurora();
-
-  carrito = carrito.map((item) => {
-    if (item.id === id) {
-      if (accion === "sumar") item.cantidad += 1;
-      if (accion === "restar") item.cantidad -= 1;
+function cambiarCantidad(id, delta){
+  const carrito = obtenerCarrito().map(item => item.id === id ? { ...item, cantidad: item.cantidad + delta } : item).filter(item => item.cantidad > 0);
+  guardarCarrito(carrito);
+  renderizarCarrito();
+}
+function eliminarItem(id){
+  guardarCarrito(obtenerCarrito().filter(item => item.id !== id));
+  renderizarCarrito();
+}
+document.addEventListener('DOMContentLoaded', () => {
+  renderizarCarrito();
+  const form = document.getElementById('checkoutForm');
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if(!form.checkValidity()){
+      form.classList.add('was-validated');
+      return;
     }
-    return item;
-  }).filter((item) => item.cantidad > 0);
-
-  guardarCarritoAurora(carrito);
-  renderizarCarritoAurora();
-}
-
-function eliminarLecturaAurora(id) {
-  const carrito = obtenerCarritoAurora().filter((item) => item.id !== id);
-  guardarCarritoAurora(carrito);
-  renderizarCarritoAurora();
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  actualizarContadorAurora();
-  renderizarCarritoAurora();
+    guardarCarrito([]);
+    renderizarCarrito();
+    form.reset();
+    document.getElementById('checkoutModal')?.classList.remove('show');
+    mostrarToast('Reserva registrada correctamente.');
+  });
 });

@@ -1,8 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 320">
-<defs><linearGradient id="bg" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#030712"/><stop offset="100%" stop-color="#0b1e4b"/></linearGradient></defs>
-<rect width="200" height="320" rx="22" fill="url(#bg)" stroke="#20366f"/>
-<rect x="12" y="12" width="176" height="296" rx="16" fill="none" stroke="rgba(255,255,255,.15)"/>
-<text x="100" y="38" fill="#f8faff" font-size="18" text-anchor="middle" font-family="Georgia">XVIII</text>
-<g><circle cx="100" cy="118" r="46" fill="none" stroke="#f5e7a2" stroke-width="4"/><path d="M118 84c-15 5-25 18-25 33s10 28 25 33c-6 1-13 0-19-2-14-6-24-20-24-35s10-29 24-35c6-2 13-3 19-2z" fill="#f5e7a2"/><circle cx="150" cy="90" r="4" fill="#facc15"/><circle cx="138" cy="103" r="3" fill="#9be8ff"/><circle cx="66" cy="92" r="3" fill="#9be8ff"/><path d="M100 55v32" stroke="#7dd3fc" stroke-width="3"/><path d="M82 140c11 8 25 12 38 12" stroke="#7dd3fc" stroke-width="3" fill="none"/></g>
-<text x="100" y="288" fill="#f8faff" font-size="20" text-anchor="middle" font-family="Georgia">The Moon</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 320"><rect width="200" height="320" rx="22" fill="#06112f" stroke="#2d4c88"/><rect x="12" y="12" width="176" height="296" rx="16" fill="none" stroke="rgba(255,255,255,.18)"/><text x="100" y="40" fill="#f8faff" font-size="18" text-anchor="middle" font-family="Georgia">XVIII</text><path d="M118 82c-17 5-28 19-28 36s11 31 28 36c-7 1-14 0-21-3-16-7-27-22-27-39s11-32 27-39c7-3 14-4 21-3z" fill="#f5e7a2"/><circle cx="130" cy="91" r="4" fill="#facc15"/><path d="M58 160c25 12 58 12 84 0" stroke="#7dd3fc" stroke-width="4" fill="none"/><text x="100" y="288" fill="#f8faff" font-size="20" text-anchor="middle" font-family="Georgia">The Moon</text></svg>

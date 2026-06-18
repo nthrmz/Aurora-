@@ -1,8 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 320">
-<defs><linearGradient id="bg" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#030712"/><stop offset="100%" stop-color="#0b1e4b"/></linearGradient></defs>
-<rect width="200" height="320" rx="22" fill="url(#bg)" stroke="#20366f"/>
-<rect x="12" y="12" width="176" height="296" rx="16" fill="none" stroke="rgba(255,255,255,.15)"/>
-<text x="100" y="38" fill="#f8faff" font-size="18" text-anchor="middle" font-family="Georgia">XVII</text>
-<g><path d="M100 74l9 24h26l-21 15 8 25-22-16-22 16 8-25-21-15h26z" fill="none" stroke="#f5e7a2" stroke-width="4"/><circle cx="62" cy="154" r="4" fill="#9be8ff"/><circle cx="100" cy="162" r="5" fill="#facc15"/><circle cx="138" cy="154" r="4" fill="#9be8ff"/><path d="M64 68c11-12 25-18 36-18 12 0 26 6 37 18" stroke="#7dd3fc" stroke-width="3" fill="none"/></g>
-<text x="100" y="288" fill="#f8faff" font-size="20" text-anchor="middle" font-family="Georgia">The Star</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 320"><rect width="200" height="320" rx="22" fill="#06112f" stroke="#2d4c88"/><rect x="12" y="12" width="176" height="296" rx="16" fill="none" stroke="rgba(255,255,255,.18)"/><text x="100" y="40" fill="#f8faff" font-size="18" text-anchor="middle" font-family="Georgia">XVII</text><path d="M100 70l11 30h32l-26 18 10 31-27-19-27 19 10-31-26-18h32z" fill="none" stroke="#f5e7a2" stroke-width="5"/><path d="M63 166c26-16 50-16 74 0" stroke="#7dd3fc" stroke-width="4" fill="none"/><text x="100" y="288" fill="#f8faff" font-size="20" text-anchor="middle" font-family="Georgia">The Star</text></svg>
