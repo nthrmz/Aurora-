@@ -1,8 +1,8 @@
-const CACHE_NAME = 'aurora-cache-v1';
+const CACHE_NAME = 'aurora-cache-v2';
 const CORE_ASSETS = [
   './', './index.html', './lecturas.html', './carrito.html', './foro.html', './agenda.html', './sobre.html', './contacto.html',
   './assets/css/estilos.css', './assets/js/main.js', './assets/js/carrito.js', './assets/js/foro.js', './assets/js/agenda.js', './assets/js/home.js', './assets/js/lecturas.js',
-  './assets/img/logo-aurora.svg', './assets/img/card-moon.svg', './assets/img/card-star.svg', './assets/img/card-sun.svg', './offline.html'
+  './assets/img/logo-aurora.svg', './assets/img/aurora.webp', './assets/img/card-moon.svg', './assets/img/card-star.svg', './assets/img/card-sun.svg', './offline.html'
 ];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(CORE_ASSETS)));

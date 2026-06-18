@@ -105,11 +105,11 @@ section{position:relative}
 .display-title{font-family:'Cinzel Decorative',serif;letter-spacing:1px;line-height:1.06;text-shadow:0 0 28px rgba(56,189,248,.32)}
 .text-gradient{background:linear-gradient(90deg,#fff,var(--primary),#e9d5ff);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero-card-stack{position:relative;min-height:460px;perspective:1000px}
-.floating-card{position:absolute;width:185px;filter:drop-shadow(0 20px 32px rgba(0,0,0,.38));animation:floatCard 6s ease-in-out infinite;transform-origin:center}
-.floating-card.card-a{left:8%;top:18%;transform:rotate(-9deg)}
-.floating-card.card-b{left:39%;top:4%;width:215px;animation-delay:.9s}
-.floating-card.card-c{right:5%;top:28%;transform:rotate(12deg);animation-delay:1.7s}
-@keyframes floatCard{0%,100%{translate:0 0}50%{translate:0 -22px}}
+.floating-card{position:absolute;width:196px;filter:drop-shadow(0 24px 32px rgba(0,0,0,.45));animation:floatCardSerious 7.5s ease-in-out infinite;transform-origin:center}
+.floating-card.card-a{left:8%;top:16%;--rotate:-6deg;transform:rotate(var(--rotate))}
+.floating-card.card-b{left:39%;top:8%;width:220px;--rotate:1deg;animation-delay:.9s;transform:rotate(var(--rotate))}
+.floating-card.card-c{right:6%;top:31%;--rotate:7deg;animation-delay:1.7s;transform:rotate(var(--rotate))}
+@keyframes floatCardSerious{0%,100%{transform:translateY(0) rotate(var(--rotate,0deg))}50%{transform:translateY(-16px) rotate(var(--rotate,0deg))}}
 .glass-card{background:var(--panel);border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow);backdrop-filter:blur(16px)}
 .service-card,.forum-card,.event-card{height:100%;transition:.25s ease;overflow:hidden}
 .service-card:hover,.forum-card:hover,.event-card:hover{transform:translateY(-7px);border-color:rgba(56,189,248,.55)}
@@ -177,14 +177,7 @@ body.page-leave .page-transition-overlay{opacity:1}
 .zodiac-symbol{width:54px;height:54px;border-radius:18px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(56,189,248,.16),rgba(168,85,247,.2));color:var(--gold);font-size:1.35rem;border:1px solid var(--line);margin-bottom:.9rem}
 .zodiac-card p{margin-bottom:0;color:var(--muted);font-size:.92rem}
 .agenda-list li+li{margin-top:.55rem}
-.floating-card{width:196px;filter:drop-shadow(0 24px 32px rgba(0,0,0,.45));animation:floatCardSerious 7.5s ease-in-out infinite}
-.floating-card.card-a{left:8%;top:16%;transform:rotate(-6deg)}
-.floating-card.card-b{left:39%;top:8%;width:220px;animation-delay:.9s;transform:rotate(1deg)}
-.floating-card.card-c{right:6%;top:31%;transform:rotate(7deg);animation-delay:1.7s}
-@keyframes floatCardSerious{0%,100%{transform:translateY(0) rotate(var(--rotate,0deg))}50%{transform:translateY(-16px) rotate(var(--rotate,0deg))}}
-.floating-card.card-a{--rotate:-6deg}.floating-card.card-b{--rotate:1deg}.floating-card.card-c{--rotate:7deg}
 .oracle-card img{border-radius:18px}
-.calendar-day{cursor:pointer}
 @media (max-width:991px){
   .hero-signs{gap:.55rem}
 }
@@ -304,10 +297,6 @@ body.page-leave .page-transition-overlay{opacity:1}
   opacity:1;
   transform:none;
 }
-img{
-  max-width:100%;
-  height:auto;
-}
 .portrait-frame picture,
 .hero-portrait-card picture{
   display:block;
@@ -315,10 +304,6 @@ img{
 .portrait-frame img{
   aspect-ratio:4 / 5;
   object-fit:cover;
-}
-.hero-slide{
-  content-visibility:auto;
-  contain-intrinsic-size:780px;
 }
 .service-card,
 .forum-card,

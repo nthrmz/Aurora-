@@ -25,6 +25,11 @@ const AURORA_SIGNOS = [
 const $ = (selector, scope = document) => scope.querySelector(selector);
 const $$ = (selector, scope = document) => [...scope.querySelectorAll(selector)];
 
+function crearIdAurora(){
+  if(window.crypto?.randomUUID) return window.crypto.randomUUID();
+  return `aurora-${Date.now().toString(36)}-${Math.random().toString(36).slice(2)}`;
+}
+
 function obtenerCarrito(){
   try { return JSON.parse(localStorage.getItem('auroraCarrito')) || []; }
   catch { return []; }
@@ -51,6 +56,7 @@ function mostrarToast(mensaje){
   const toastEl = $('#auroraToast');
   if(!toastEl) return;
   $('.toast-body', toastEl).textContent = mensaje;
+  if(!window.bootstrap?.Toast) return;
   const toast = new bootstrap.Toast(toastEl);
   toast.show();
 }
@@ -64,7 +70,7 @@ function configurarTema(){
     btn.classList.toggle('is-light', tema === 'light');
     btn.classList.toggle('is-dark', tema === 'dark');
     btn.setAttribute('aria-label', tema === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
-    btn.setAttribute('aria-pressed', tema === 'light' ? 'true' : 'false');
+    btn.setAttribute('aria-checked', tema === 'light' ? 'true' : 'false');
   }
 
   actualizarSwitchTema(saved);
