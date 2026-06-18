@@ -1,4 +1,4 @@
-const CACHE_NAME = 'aurora-cache-v5';
+const CACHE_NAME = 'aurora-cache-v1';
 const CORE_ASSETS = [
   './', './index.html', './lecturas.html', './carrito.html', './foro.html', './agenda.html', './sobre.html', './contacto.html',
   './assets/css/estilos.css', './assets/js/main.js', './assets/js/carrito.js', './assets/js/foro.js', './assets/js/agenda.js', './assets/js/home.js', './assets/js/lecturas.js',
