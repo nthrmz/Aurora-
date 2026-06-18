@@ -64,7 +64,7 @@ function configurarTema(){
     btn.classList.toggle('is-light', tema === 'light');
     btn.classList.toggle('is-dark', tema === 'dark');
     btn.setAttribute('aria-label', tema === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro');
-    btn.setAttribute('aria-pressed', tema === 'light' ? 'true' : 'false');
+    btn.setAttribute('aria-checked', tema === 'light' ? 'true' : 'false');
   }
 
   actualizarSwitchTema(saved);
