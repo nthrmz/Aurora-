@@ -74,8 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     guardarCarrito([]);
     renderizarCarrito();
-    const modalEl = document.getElementById('checkoutModal');
-    const modal = window.bootstrap?.Modal?.getInstance(modalEl);
+    const modal = bootstrap.Modal.getInstance(document.getElementById('checkoutModal'));
     modal?.hide();
     mostrarToast('Reserva registrada. Aurora se comunicará contigo pronto.');
     form.reset();

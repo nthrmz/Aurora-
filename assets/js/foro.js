@@ -1,6 +1,6 @@
 const comentariosIniciales = [
-  { id: crearIdAurora(), nombre:'Valeria', categoria:'Experiencia', comentario:'La lectura de tres cartas me ayudó a ordenar mis ideas antes de tomar una decisión.', estado:'aprobado', fecha:'2026-06-01' },
-  { id: crearIdAurora(), nombre:'Mateo', categoria:'Pregunta', comentario:'¿Las lecturas de feria se reservan por horario?', estado:'aprobado', fecha:'2026-06-05' }
+  { id: crypto.randomUUID(), nombre:'Valeria', categoria:'Experiencia', comentario:'La lectura de tres cartas me ayudó a ordenar mis ideas antes de tomar una decisión.', estado:'aprobado', fecha:'2026-06-01' },
+  { id: crypto.randomUUID(), nombre:'Mateo', categoria:'Pregunta', comentario:'¿Las lecturas de feria se reservan por horario?', estado:'aprobado', fecha:'2026-06-05' }
 ];
 function obtenerComentarios(){
   const guardados = localStorage.getItem('auroraComentarios');
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
     const nuevo = {
-      id: crearIdAurora(),
+      id: crypto.randomUUID(),
       nombre: document.getElementById('commentName').value.trim(),
       categoria: document.getElementById('commentCategory').value,
       comentario: document.getElementById('commentText').value.trim(),

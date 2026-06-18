@@ -1,3 +1,35 @@
+
+/* Compatibilidad mínima local para modal/toast/carrusel/navbar sin Bootstrap externo */
+window.bootstrap = window.bootstrap || {
+  Toast: class { constructor(el){ this.el = el; } show(){ this.el?.classList.add('show'); setTimeout(()=>this.el?.classList.remove('show'), 2600); } },
+  Modal: class { constructor(el){ this.el = el; if(el) el.__modal = this; } show(){ if(!this.el) return; this.el.classList.add('show'); this.el.removeAttribute('aria-hidden'); document.body.style.overflow='hidden'; } hide(){ if(!this.el) return; this.el.classList.remove('show'); this.el.setAttribute('aria-hidden','true'); document.body.style.overflow=''; } static getInstance(el){ return el?.__modal || new bootstrap.Modal(el); } }
+};
+function configurarComponentesLocales(){
+  document.querySelectorAll('[data-bs-toggle="collapse"]').forEach(btn => btn.addEventListener('click', () => {
+    const target = document.querySelector(btn.getAttribute('data-bs-target'));
+    if(!target) return;
+    const expanded = target.classList.toggle('show');
+    btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+  }));
+  document.querySelectorAll('[data-bs-toggle="modal"]').forEach(btn => btn.addEventListener('click', () => {
+    const modal = document.querySelector(btn.getAttribute('data-bs-target'));
+    if(modal) bootstrap.Modal.getInstance(modal).show();
+  }));
+  document.querySelectorAll('[data-bs-dismiss="modal"]').forEach(btn => btn.addEventListener('click', () => bootstrap.Modal.getInstance(btn.closest('.modal')).hide()));
+  document.querySelectorAll('[data-bs-dismiss="toast"]').forEach(btn => btn.addEventListener('click', () => btn.closest('.toast')?.classList.remove('show')));
+  document.querySelectorAll('.carousel').forEach(carousel => {
+    const items = [...carousel.querySelectorAll('.carousel-item')];
+    const indicators = [...carousel.querySelectorAll('.carousel-indicators button')];
+    if(items.length < 2) return;
+    let index = Math.max(0, items.findIndex(i => i.classList.contains('active')));
+    const go = (next) => { items[index].classList.remove('active'); indicators[index]?.classList.remove('active'); indicators[index]?.removeAttribute('aria-current'); index = (next + items.length) % items.length; items[index].classList.add('active'); indicators[index]?.classList.add('active'); indicators[index]?.setAttribute('aria-current','true'); };
+    carousel.querySelector('[data-bs-slide="prev"]')?.addEventListener('click', () => go(index - 1));
+    carousel.querySelector('[data-bs-slide="next"]')?.addEventListener('click', () => go(index + 1));
+    indicators.forEach((btn,i) => btn.addEventListener('click', () => go(i)));
+    if(carousel.dataset.bsRide === 'carousel') setInterval(() => go(index + 1), 6500);
+  });
+}
+
 const AURORA_SERVICIOS = [
   { id: 'carta-dia', nombre: 'Carta del día', precio: 20, icono: 'fa-moon', descripcion: 'Mensaje breve para orientar tu energía actual.' },
   { id: 'amor', nombre: 'Lectura amor', precio: 50, icono: 'fa-heart', descripcion: 'Guía intuitiva sobre vínculos, emociones y decisiones afectivas.' },
@@ -25,11 +57,6 @@ const AURORA_SIGNOS = [
 const $ = (selector, scope = document) => scope.querySelector(selector);
 const $$ = (selector, scope = document) => [...scope.querySelectorAll(selector)];
 
-function crearIdAurora(){
-  if(window.crypto?.randomUUID) return window.crypto.randomUUID();
-  return `aurora-${Date.now().toString(36)}-${Math.random().toString(36).slice(2)}`;
-}
-
 function obtenerCarrito(){
   try { return JSON.parse(localStorage.getItem('auroraCarrito')) || []; }
   catch { return []; }
@@ -56,7 +83,6 @@ function mostrarToast(mensaje){
   const toastEl = $('#auroraToast');
   if(!toastEl) return;
   $('.toast-body', toastEl).textContent = mensaje;
-  if(!window.bootstrap?.Toast) return;
   const toast = new bootstrap.Toast(toastEl);
   toast.show();
 }
@@ -213,6 +239,7 @@ function registrarServiceWorker(){
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  configurarComponentesLocales();
   configurarTema();
   actualizarContadorCarrito();
   configurarBotonesCompra();
